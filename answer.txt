@@ -1,0 +1,33 @@
+Name: Zidong Wang
+Unique Name: wzidong
+
+tfidf for documents, tfidf for query
+- top	10	documents	in	the	ranking	(for	each	query)
+precision: 0.1888 
+recall: 0.272832369942
+- top	50	documents	in	the	ranking	(for	each	query)
+precision: 0.07504 
+recall: 0.542196531792
+- top	100	documents	in	the	ranking	(for	each	query)
+precision: 0.0464
+recall: 0.670520231214
+- top	500	documents	in	the	ranking	(for	each	query)
+precision: 0.0123652142706 
+recall: 0.876300578035
+
+Best weighted probabilistic weight nxx-bpx for documents, nxx-bpx for query
+- top	10	documents	in	the	ranking	(for	each	query)
+precision: 0.1872 
+recall: 0.270520231214
+- top	50	documents	in	the	ranking	(for	each	query)
+precision: 0.072 
+recall: 0.520231213873 
+- top	100	documents	in	the	ranking	(for	each	query)
+precision: 0.04512 
+recall: 0.652023121387
+- top	500	documents	in	the	ranking	(for	each	query)
+precision: 0.0123325883754 
+recall: 0.873988439306
+
+Discussion
+For the nxx-box weighting scheme, the weight of terms in documents is 0.5+0.5*tf/maxtf, which focuses on weighting the frequency it appears within one single document. However, the weight of terms in queries is log((N-n)/n), which focuses on weighting the number of documents containing the term. Documents weighting focus is slightly different with the query weighting focus, which makes it perform less well than itidf does.
